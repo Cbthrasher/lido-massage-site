@@ -3,154 +3,244 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lido Massage — Gainesville, GA | Body · Foot · Combo</title>
-  <meta name="description" content="Lido Massage in Gainesville, GA. Healing, relaxing massage with organic oils. Body, Foot, and Combo services. Call 470-252-5055 or book online." />
-  <link rel="stylesheet" href="assets/site.css">
+  <title>Lido Massage — Gainesville, GA | Relax. Rejuvenate. Restore.</title>
+  <meta name="description" content="Professional body and foot massage in Gainesville, GA. Clean, calm, and friendly. Call 470-252-5055 or text 470-618-1995. Walk-ins welcome." />
 
-  <!-- Basic share/meta -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Lido Massage — Gainesville, GA" />
-  <meta property="og:description" content="Healing, relaxing massage with organic oils. Specials available. Call or book online." />
+  <meta property="og:description" content="Professional body and foot massage. $60 Full-Body Special (limited time). Call 470-252-5055 or text 470-618-1995." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lido-massage.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" />
+
+  <style>
+    /* Minimal, tasteful styling so this page looks good without external CSS */
+    :root{
+      --ink:#223;
+      --muted:#5c6670;
+      --green:#0a7b64;
+      --mint:#e9f4f1;
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e5e8eb;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
+    }
+    a{color:var(--green); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1060px; margin:0 auto; padding:22px}
+    .site-header{border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; z-index:10}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .nav{display:flex; justify-content:space-between; align-items:center; gap:16px}
+    .nav-links{display:flex; gap:16px; flex-wrap:wrap}
+    .hero{padding:28px 0}
+    h1{font-size:34px; margin:6px 0 6px}
+    .lead{color:var(--muted); margin:0 0 8px}
+    .badge{display:inline-block; padding:4px 10px; border-radius:999px; background:#eef4f1; color:#264; font-size:12px}
+    .btn{
+      display:inline-block; background:var(--green); color:#fff; padding:10px 14px; border-radius:10px;
+      font-weight:700; border:0; cursor:pointer;
+    }
+    .btn:hover{opacity:.94; text-decoration:none}
+    .btn.secondary{background:#fff; color:var(--green); border:1px solid var(--green)}
+    .cta-inline a{margin-right:10px}
+
+    .section{padding:22px 0}
+    .section--tight{padding:8px 0}
+
+    .offer{
+      background:linear-gradient(90deg,var(--mint),#f3faf8);
+      border:1px solid #d9ebe6; border-radius:14px; padding:14px 16px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .pill{background:var(--green); color:#fff; padding:6px 10px; border-radius:999px; font-size:13px; font-weight:700}
+    .offer strong{font-weight:800}
+
+    .grid{display:grid; gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:860px){ .grid-3{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px}
+    .center{text-align:center}
+    .circle{width:240px; height:240px; border-radius:50%; object-fit:cover; display:block; margin:8px auto}
+    @media (max-width:840px){ .circle{width:180px; height:180px} }
+
+    .price-card h4{margin:0 0 6px}
+    .line{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed #e6e6e6}
+    .amt{font-weight:700}
+
+    .address{line-height:1.5}
+    .site-footer{border-top:1px solid var(--border); margin-top:20px; padding:20px 0; color:var(--muted); font-size:14px}
+  </style>
 </head>
 <body>
 
-  <!-- Top notice bar -->
-  <div class="notice">Walk-ins welcome · Open daily</div>
-
-  <!-- Header / Logo -->
-  <header class="hero">
-    <div class="wrap">
-      <!-- Simple inline green yin-yang logo -->
-      <div class="logo" aria-hidden="true">
-        <svg viewBox="0 0 100 100" role="img">
-          <circle cx="50" cy="50" r="46" class="logo-ring"/>
-          <path class="logo-half" d="M50,4 A46,46 0 1,1 50,96 C39,96 30,87 30,76 C30,65 39,56 50,56 C61,56 70,47 70,36 C70,25 61,16 50,16 C39,16 30,25 30,36 C30,47 39,56 50,56"/>
-          <circle cx="38" cy="36" r="6" class="logo-dot"/>
-          <circle cx="62" cy="76" r="6" class="logo-dot"/>
-        </svg>
-      </div>
-
-      <h1>Lido Massage — Gainesville, GA</h1>
-      <p class="tagline">
-        Healing, relaxing massage with <strong>organic oils</strong> in a calm, friendly atmosphere.
-      </p>
-
-      <div class="cta-row">
-        <a class="btn" href="tel:+14702525055">Call 470-252-5055</a>
-        <a class="btn btn-outline" href="sms:+14706181995">Text 470-618-1995</a>
-        <a class="btn btn-secondary" target="_blank" rel="noopener" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx">Book Online</a>
-      </div>
-
-      <p class="address">
-        1310 Dawsonville Hwy, Suite D, Gainesville, GA 30501 —
-        <a target="_blank" rel="noopener" href="https://maps.apple.com/?address=1310%20Dawsonville%20Hwy%20Suite%20D,%20Gainesville,%20GA%2030501">Open in Maps</a>
-      </p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">Lido Massage</div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Promo band -->
-  <section class="promo wrap">
-    <div class="promo-tag">Limited-time special</div>
-    <div class="promo-body">
-      <strong>Full-Body Massage — $60</strong>
-      <span class="muted">(ask in store · some restrictions may apply)</span>
-      <a class="promo-book" target="_blank" rel="noopener" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx">Book now →</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Lido Massage — Gainesville, GA</h1>
+      <p class="lead">Healing, relaxing massage with organic oils and a calm, friendly atmosphere.</p>
+      <p class="cta-inline">
+        <a class="btn" href="tel:+14702525055">Call 470-252-5055</a>
+        <a class="btn secondary" href="sms:+14706181995">Text 470-618-1995</a>
+        <a class="btn" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a>
+      </p>
+      <span class="badge">Walk-ins welcome · Open daily</span>
     </div>
   </section>
 
-  <!-- Why choose us -->
-  <section class="wrap grid-2">
-    <div class="card">
-      <h2>Why Choose Us</h2>
-      <ul class="bullets">
-        <li>Professional, licensed therapists</li>
-        <li>Organic oils for skin & wellness</li>
-        <li>Clean, calm rooms — friendly staff</li>
-        <li>Walk-ins welcome · Flexible hours</li>
-      </ul>
-      <p class="small muted">
-        We’re a proud Asian spa in Gainesville focused on your holistic wellness.
-      </p>
+  <!-- Limited-time offer -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="offer">
+        <div>
+          <span class="pill">Limited-time special</span>
+          <div class="mt-1"><strong>Full-Body Massage — $60</strong> <span style="color:#5c6670">(ask in store · some restrictions may apply)</span></div>
+        </div>
+        <a class="btn" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a>
+      </div>
     </div>
-    <div class="card">
-      <h2>Contact</h2>
-      <p class="lead">
-        Call <a href="tel:+14702525055">470-252-5055</a> ·
-        Text <a href="sms:+14706181995">470-618-1995</a><br>
-        <a target="_blank" rel="noopener" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx">Book online</a>
-      </p>
+  </section>
+
+  <!-- Three features -->
+  <section class="section section--tight">
+    <div class="container grid grid-3">
+      <div class="card center">
+        <img class="circle" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Spa entrance">
+        <h3>Clean • Calm • Friendly</h3>
+        <p>Quiet treatment rooms, fresh linens, and a relaxing atmosphere.</p>
+      </div>
+      <div class="card center">
+        <img class="circle" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=1200&auto=format&fit=crop" alt="Treatment room">
+        <h3>Organic Oils</h3>
+        <p>Quality oils to nourish skin and enhance relaxation.</p>
+      </div>
+      <div class="card center">
+        <img class="circle" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Professional massage">
+        <h3>Skilled Therapists</h3>
+        <p>Deep Tissue • Swedish • Shiatsu • Thai • Foot & Combo sessions.</p>
+      </div>
     </div>
   </section>
 
   <!-- Services & Prices -->
-  <section class="wrap">
-    <h2>Massage Service & Price</h2>
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Massage Service & Price</h2>
+      <div class="grid grid-3" style="margin-top:14px">
+        <div class="card price-card">
+          <h4>Body</h4>
+          <div class="line"><span>30 mins (Swedish)</span><span class="amt">$45</span></div>
+          <div class="line"><span>60 mins (Swedish)</span><span class="amt">$70</span></div>
+          <div class="line"><span>60 mins (Medium/Deep)</span><span class="amt">$70</span></div>
+          <div class="line"><span>60 mins Thai</span><span class="amt">$80</span></div>
+          <div class="line"><span>60 mins Shiatsu</span><span class="amt">$80</span></div>
+          <div class="line"><span>90 mins (Medium/Deep)</span><span class="amt">$100</span></div>
+          <div class="line"><span>2 Hours (Deep)</span><span class="amt">$140</span></div>
+        </div>
 
-    <div class="grid-3">
-      <article class="card">
-        <h3>Body</h3>
-        <ul class="price-list">
-          <li><span>30 mins</span><b>$45</b></li>
-          <li><span>60 mins (Swedish)</span><b>$70</b></li>
-          <li><span>60 mins (Medium/Deep)</span><b>$70</b></li>
-          <li><span>60 mins Thai</span><b>$80</b></li>
-          <li><span>60 mins Shiatsu</span><b>$80</b></li>
-          <li><span>90 mins (Medium/Deep)</span><b>$100</b></li>
-        </ul>
-      </article>
+        <div class="card price-card">
+          <h4>Foot</h4>
+          <div class="line"><span>30 mins</span><span class="amt">$30</span></div>
+          <div class="line"><span>60 mins</span><span class="amt">$50</span></div>
+          <div class="line"><span>60 mins (includes 10 mins body)</span><span class="amt">$55</span></div>
+        </div>
 
-      <article class="card">
-        <h3>Combo</h3>
-        <ul class="price-list">
-          <li><span>Body + Foot — 1 hour</span><b>$70</b></li>
-          <li><span>90 mins</span><b>$100</b></li>
-          <li><span>2 hours (Swedish)</span><b>$130</b></li>
-          <li><span>2 hours (Deep)</span><b>$140</b></li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Foot</h3>
-        <ul class="price-list">
-          <li><span>30 mins</span><b>$30</b></li>
-          <li><span>60 mins</span><b>$50</b></li>
-          <li><span>60 mins (with 10 mins free body)</span><b>$55</b></li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="card mt-2">
-      <h3>Add-Ons</h3>
-      <p>Hot Stone & Coconut Oil <strong>+ $10</strong></p>
+        <div class="card price-card">
+          <h4>Combo</h4>
+          <div class="line"><span>Body + Foot (60 mins)</span><span class="amt">$70</span></div>
+          <div class="line"><span>90 mins</span><span class="amt">$100</span></div>
+          <div class="line"><span>2 Hours (Swedish)</span><span class="amt">$130</span></div>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:14px">Add-ons available. Please call or ask in store for details.</p>
+      <p><a class="btn" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a></p>
     </div>
   </section>
 
-  <!-- Simple gallery placeholder (you’ll swap images later) -->
-  <section class="wrap">
-    <h2>Gallery</h2>
-    <div class="thumbs">
-      <div class="thumb"></div>
-      <div class="thumb"></div>
-      <div class="thumb"></div>
+  <!-- Contact / Location -->
+  <section id="contact" class="section">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h3 class="mt-0">Why Choose Lido Massage</h3>
+        <p>
+          Welcome to Lido Massage, where we offer healing and relaxing massage services with purpose and light colors.
+          We use quality, natural oils and keep a serene, tranquil environment so you can truly unwind.
+        </p>
+        <p>
+          Our highly trained, licensed therapists are here to help you release knots, reduce stress, and feel your best.
+          We offer Deep Tissue, Swedish, Shiatsu, Thai, Foot, and Combo sessions. Walk-ins are welcome.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="mt-0">Contact & Location</h3>
+        <p class="address">
+          1310 Dawsonville Hwy, Suite D<br>
+          Gainesville, GA 30501
+        </p>
+        <p class="cta-inline">
+          <a class="btn" href="tel:+14702525055">Call 470-252-5055</a>
+          <a class="btn secondary" href="sms:+14706181995">Text 470-618-1995</a>
+        </p>
+        <p style="margin-top:10px">
+          <a href="https://maps.apple.com/?q=1310%20Dawsonville%20Hwy%20Suite%20D%2C%20Gainesville%2C%20GA%2030501" target="_blank" rel="noopener">Open in Maps →</a>
+        </p>
+        <p style="margin-top:10px">
+          <a class="btn" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a>
+        </p>
+      </div>
     </div>
-    <p class="muted small">We’ll replace these with real spa photos later.</p>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="wrap foot">
-      <div>© <span id="y"></span> Lido Massage · Gainesville, GA</div>
-      <div>
+    <div class="container">
+      <div>© 2025 Lido Massage · Gainesville, GA</div>
+      <div style="margin-top:6px">
         <a href="tel:+14702525055">Call</a> ·
         <a href="sms:+14706181995">Text</a> ·
-        <a target="_blank" rel="noopener" href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx">Book</a>
+        <a href="https://business.joinsmiley.com/Gainesville-Lido-Massage-GwPcx" target="_blank" rel="noopener">Book Online</a> ·
+        <a href="https://maps.apple.com/?q=1310%20Dawsonville%20Hwy%20Suite%20D%2C%20Gainesville%2C%20GA%2030501" target="_blank" rel="noopener">Map</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <!-- LocalBusiness schema for SEO / assistants -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Lido Massage",
+    "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop",
+    "url": "https://lido-massage.com/",
+    "telephone": "+1-470-252-5055",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1310 Dawsonville Hwy, Suite D",
+      "addressLocality": "Gainesville",
+      "addressRegion": "GA",
+      "postalCode": "30501",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$",
+    "description": "Professional body and foot massage in Gainesville, GA. Organic oils. Walk-ins welcome.",
+    "sameAs": []
+  }
   </script>
 </body>
 </html>
