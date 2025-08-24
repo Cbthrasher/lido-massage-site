@@ -1,40 +1,144 @@
-/* ---------- Base ---------- */
+/* ===== Lido Massage — Global Styles ===== */
+
 :root{
-  --ink:#19202a;
-  --muted:#5b6470;
-  --bg:#f6fbf8;
+  --ink:#1e2233;
+  --muted:#5b6275;
+  --bg:#f7fbf9;
   --card:#ffffff;
-  --brand:#0a7b64;       /* dark spa green (buttons/pill) */
-  --brand-200:#e7f3f0;   /* pale green backgrounds */
-  --line:#e6ecea;
-  --radius:14px;
+
+  --brand-green:#0a7b64;           /* primary brand */
+  --brand-green-dark:#086b56;      /* hover/darker */
+  --brand-mint:#e9f4f1;            /* soft background tint */
+  --line:#e6ece9;
+  --shadow:0 10px 30px rgba(6, 55, 46, .08);
 }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:var(--ink);
   background:#fff;
 }
 
-/* ---------- Layout ---------- */
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
+/* --- Layout helpers --- */
+.container{max-width:1100px; margin:0 auto; padding:0 20px}
 .section{padding:56px 0}
-.section--tight{padding:28px 0}
-.grid{display:grid;gap:18px}
-.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr} }
+.section--tight{padding:32px 0}
+.center{text-align:center}
+.mt-0{margin-top:0}
+.mt-1{margin-top:6px}
+.mt-2{margin-top:12px}
+.mt-3{margin-top:18px}
+.mt-4{margin-top:24px}
 
-/* ---------- Header ---------- */
+/* --- Header / Nav --- */
 .site-header{
-  position:sticky; top:0; z-index:20;
+  position:sticky; top:0; z-index:50;
   background:#fff; border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(10px);
 }
-.nav{display:flex;justify-content:space-between;align-items:center;height:64px}
-.brand{font-weight:800;color:var(--ink);text-decoration:none}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px;
+}
+.brand{
+  font-weight:800; text-decoration:none; color:var(--ink);
+}
 .nav-links a{
-  color:var(--ink); text-decoration:none; margin-left:22px;
+  color:var(--muted); text-decoration:none; margin-left:24px; padding:8px 0; display:inline-block;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--brand-green); border-color:var(--brand-green)}
+
+/* --- Hero --- */
+.hero{
+  background: radial-gradient(1200px 400px at 50% -100px, var(--brand-mint), #ffffff 60%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{ padding:56px 0 40px }
+.hero h1{
+  font-size:40px; line-height:1.2; margin:0 0 10px; font-weight:900; letter-spacing:.3px;
+}
+.lead{color:var(--muted); font-size:18px}
+
+/* --- Buttons --- */
+.btn, a.btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  font-weight:700; padding:12px 20px; border-radius:12px;
+  background:var(--brand-green); color:#fff !important; border:1px solid var(--brand-green);
+  box-shadow:var(--shadow);
+  transition:transform .04s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover, a.btn:hover{ background:var(--brand-green-dark); border-color:var(--brand-green-dark); transform:translateY(-1px) }
+
+.btn-outline, a.btn-outline{
+  background:#fff; color:var(--brand-green) !important; border:1px solid var(--brand-green);
+  box-shadow:var(--shadow);
+}
+
+.badge-soft{
+  background:#eef4f1; color:#234; padding:4px 8px; border-radius:999px; font-size:12px;
+}
+
+/* --- Offer strip --- */
+.offer{
+  background:linear-gradient(90deg, var(--brand-mint), #f3faf8);
+  border:1px solid var(--line);
+  border-radius:16px; padding:16px; display:flex; gap:14px; align-items:center; justify-content:space-between;
+}
+.pill{background:var(--brand-green); color:#fff; padding:6px 12px; border-radius:999px; font-weight:700; font-size:14px}
+
+/* --- Grid / Cards --- */
+.grid{display:grid; gap:22px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--shadow);
+}
+.card h3,.card h4{margin:8px 0 6px}
+.card p{margin:0; color:var(--muted)}
+
+.circle{width:220px; height:220px; border-radius:50%; object-fit:cover; display:block; margin:auto}
+
+/* Gallery cards (About) */
+.gallery img{width:100%; height:220px; object-fit:cover; border-radius:16px 16px 0 0}
+.gallery .card{padding:0; overflow:hidden}
+.gallery .card h4{margin:12px 14px 6px}
+.gallery .card p{margin:0 14px 14px; color:#445}
+
+/* Prices (if/when shown) */
+.price-card .line{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line)}
+.price-card .amt{font-weight:700}
+
+/* --- Footer --- */
+.site-footer{
+  padding:26px 0; border-top:1px solid var(--line); background:#fff; color:var(--muted);
+}
+.site-footer a{color:var(--brand-green); text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+
+/* --- Responsive --- */
+@media (max-width:1000px){
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .nav{height:58px}
+  .nav-links a{margin-left:14px}
+  .hero h1{font-size:32px}
+  .circle{width:180px; height:180px}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .offer{flex-direction:column; align-items:stretch}
+}
+
+/* Utility */
+.note{color:#556}
+.address{line-height:1.5}
+.cta-inline a{margin-right:10px}  color:var(--ink); text-decoration:none; margin-left:22px;
   padding:8px 2px; border-bottom:3px solid transparent;
 }
 .nav-links a.active{border-color:var(--brand); color:var(--brand)}
