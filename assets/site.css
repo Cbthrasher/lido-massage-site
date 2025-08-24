@@ -1,40 +1,202 @@
+/* ================================
+   Lido Massage — Base Styles
+   ================================ */
+
+/* Color system */
 :root{
-  --ink:#1f3631;        /* dark green ink */
-  --leaf:#2d6a4f;       /* brand green */
-  --mint:#e6f0eb;       /* soft background */
-  --accent:#1b7f6b;     /* deep green for buttons */
-  --border:#dce6e1;
+  --bg: #ffffff;
+  --ink: #22323a;
+  --muted: #6b7a80;
+
+  --primary: #6e856b;      /* spa green */
+  --primary-ink: #ffffff;
+  --accent: #e9f4f1;       /* soft mint */
+  --accent-ink: #234;
+
+  --card: #ffffff;
+  --card-border: #e7ecea;
+  --divider: #e8eceb;
+
+  --shadow-1: 0 6px 16px rgba(24, 39, 75, 0.06),
+              0 2px 4px rgba(24, 39, 75, 0.06);
 }
 
-*{box-sizing:border-box}
+/* Reset-ish */
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+html{ -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body{
-  margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--ink); background:#fff;
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--bg);
 }
 
-/* containers */
-.wrap{max-width:1050px; margin:0 auto; padding:0 20px}
-.mt-2{margin-top:20px}
+/* Typography */
+h1,h2,h3,h4{ margin:0 0 .5rem; line-height:1.25; font-weight:800; color:var(--ink); }
+.h2, h2{ font-size: clamp(1.5rem, 2.4vw + .6rem, 2rem); }
+h1{ font-size: clamp(1.75rem, 2.8vw + .8rem, 2.4rem); }
+.lead{ font-size:1.125rem; color:var(--muted); }
 
-/* notice */
-.notice{
-  background:#f4faf7; color:#3d6f60; text-align:center; padding:8px 12px; border-bottom:1px solid var(--border);
+a{ color:var(--primary); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* Layout helpers */
+.container{
+  width:min(1120px, 92%);
+  margin-inline:auto;
+}
+.section{ padding: 48px 0; }
+.section--tight{ padding: 28px 0; }
+
+.mt-0{ margin-top:0!important; }
+.mt-1{ margin-top:.5rem!important; }
+.mt-2{ margin-top:1rem!important; }
+.mt-3{ margin-top:1.5rem!important; }
+.mt-4{ margin-top:2rem!important; }
+.center{ text-align:center; }
+
+/* Grid */
+.grid{
+  display:grid;
+  gap:20px;
+}
+.grid-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+@media (max-width: 960px){
+  .grid-3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px){
+  .grid-2, .grid-3{ grid-template-columns: 1fr; }
 }
 
-/* header / hero */
-.hero{background:var(--mint); padding:28px 0 22px; border-bottom:1px solid var(--border)}
-.hero .tagline{margin:.35rem 0 1rem}
-.address{margin:.5rem 0 0; color:#45695f}
-.address a{color:var(--leaf)}
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--primary);
+  color:var(--primary-ink);
+  padding:10px 16px;
+  border-radius:10px;
+  border:1px solid transparent;
+  font-weight:700;
+  box-shadow: var(--shadow-1);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover{ text-decoration:none; transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
 
-.logo{width:88px; margin:0 auto 8px}
-.logo svg{width:100%; height:auto; display:block}
-.logo-ring{fill:none; stroke:var(--leaf); stroke-width:8}
-.logo-half{fill:var(--leaf)}
-.logo-dot{fill:#fff}
+.btn.btn-secondary{
+  background:#ffffff;
+  color:var(--primary);
+  border-color:var(--primary);
+  box-shadow:none;
+}
 
-/* headings */
-h1,h2,h3{line-height:1.25; margin:.2em 0 .4em}
+/* Header / Nav */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:#fff; border-bottom:1px solid var(--divider);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  font-weight:900; letter-spacing:.2px;
+  color:var(--ink);
+}
+.nav-links{ display:flex; gap:18px; align-items:center; }
+.nav-links a{
+  color:var(--ink); opacity:.85; font-weight:600;
+  padding:6px 2px; border-bottom:2px solid transparent;
+}
+.nav-links a:hover{ opacity:1; }
+.nav-links a.active{ color:var(--primary); border-color:var(--primary); }
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 50% -10%, var(--accent) 0%, transparent 60%) no-repeat,
+    linear-gradient(#fff, #fff);
+  padding: 56px 0 24px;
+}
+.hero-inner{ text-align:center; }
+.hero .cta-inline .btn{ margin-right:8px; }
+
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Price cards / lines */
+.price-card h4{ font-size:1.1rem; }
+.price-card .line{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 0; border-bottom:1px dashed var(--divider);
+}
+.price-card .line:last-child{ border-bottom:0; }
+.price-card .amt{ font-weight:800; }
+
+/* Badges */
+.badge-soft{
+  display:inline-flex; align-items:center; gap:8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding:6px 10px; border-radius:999px; font-weight:700; font-size:.85rem;
+}
+
+/* Offer stripe (home) */
+.offer{ /* container styling comes from inline page CSS; keep minimal here */ }
+.offer .pill{
+  display:inline-block; background:#0a7b64; color:#fff;
+  padding:6px 10px; border-radius:999px; font-size:.85rem; font-weight:800;
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid var(--divider);
+  background:#fff;
+  padding:26px 0;
+  color:var(--muted);
+}
+.site-footer a{ color:var(--primary); }
+
+/* Reveal on view */
+.reveal{ opacity:0; transform: translateY(12px); transition: all .45s ease; }
+.reveal.in{ opacity:1; transform:none; }
+
+/* Utilities */
+.wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.center .btn{ margin-top:.4rem; }
+
+/* Images as circles in feature blocks (index) */
+.circle{
+  width:240px; height:240px; border-radius:50%;
+  object-fit:cover; display:block; margin-inline:auto;
+  box-shadow: var(--shadow-1);
+}
+@media (max-width: 840px){
+  .circle{ width:180px; height:180px; }
+}
+
+/* Tables (if you add any later) */
+table{ width:100%; border-collapse:collapse; }
+th, td{ padding:10px 12px; border-bottom:1px solid var(--divider); text-align:left; }
+th{ background:#f8fbfa; font-weight:800; }
+
+/* Forms (future-proof for a contact form) */
+input, textarea, select{
+  width:100%; padding:10px 12px; border:1px solid var(--card-border);
+  border-radius:10px; background:#fff; color:var(--ink);
+}
+label{ font-weight:700; display:block; margin:.6rem 0 .25rem; }h1,h2,h3{line-height:1.25; margin:.2em 0 .4em}
 h1{font-size:2rem; text-align:center; color:var(--leaf)}
 h2{font-size:1.35rem}
 h3{font-size:1.05rem; text-transform:uppercase; letter-spacing:.02em}
