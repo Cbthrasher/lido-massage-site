@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Lido Massage — Gainesville, GA | Relax. Rejuvenate. Restore.</title>
   <meta name="description" content="Professional body, foot, and combo massage in Gainesville, GA. Clean, calm, and friendly. Call 470-252-5055 or text 470-618-1995. Walk-ins welcome."/>
-  <link rel="stylesheet" href="/assets/site.css"/>
+  <!-- cache-bust the CSS so you don't see old styles -->
+  <link rel="stylesheet" href="/assets/site.css?v=3"/>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lido Massage — Gainesville, GA"/>
@@ -29,12 +30,103 @@
     </div>
   </header>
 
-  <!-- Top contact strip -->
+  <!-- Top contact line -->
   <section class="section section--tight" style="padding-bottom:0;">
-    <div class="container" style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; color:#5b6275;">
+    <div class="container" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:#5b6275;">
       <div>1310 Dawsonville Hwy, Suite D, Gainesville, GA 30501</div>
       <div style="margin-left:auto">
         <a href="tel:+14702525055">Call</a> ·
+        <a href="sms:+14706181995">Text</a> ·
+        <a href="https://maps.apple.com/?q=1310%20Dawsonville%20Hwy%20Suite%20D%2C%20Gainesville%2C%20GA%2030501" target="_blank" rel="noopener">Map</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner center">
+      <h1>Lido Massage — Gainesville, GA</h1>
+      <p class="lead">Healing, relaxing massage with organic oils and a calm, friendly atmosphere.</p>
+      <p class="mt-3">
+        <a class="btn" href="sms:+14706181995">Text 470-618-1995</a>
+        <a class="btn btn-outline" href="tel:+14702525055">Call 470-252-5055</a>
+      </p>
+      <p class="mt-2 badge-soft">Walk-ins welcome · Open daily</p>
+    </div>
+  </section>
+
+  <!-- Limited-time offer -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="offer">
+        <div>
+          <span class="pill">Limited-time special</span>
+          <div class="mt-1"><strong>Full-Body Massage — $60</strong> <span class="note">(ask in store · some restrictions may apply)</span></div>
+        </div>
+        <a class="btn btn-outline" href="tel:+14702525055">Book by Phone</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four highlights (no repeats) -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card" style="display:flex;gap:18px;align-items:center;">
+          <img class="circle" src="/assets/foot.jpg" alt="Foot massage">
+          <div>
+            <h3 class="mt-0">Foot & Reflexology</h3>
+            <p>Focused relief for tired feet; helps circulation and overall relaxation.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:18px;align-items:center;">
+          <img class="circle" src="/assets/oils.jpg" alt="Massage oils">
+          <div>
+            <h3 class="mt-0">Organic Oils</h3>
+            <p>Quality oils that nourish skin and enhance the massage experience.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:18px;align-items:center;">
+          <img class="circle" src="/assets/relax.jpg" alt="Relaxing body massage">
+          <div>
+            <h3 class="mt-0">Relax & Unwind</h3>
+            <p>Quiet rooms, fresh linens, and friendly staff in a calm atmosphere.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:18px;align-items:center;">
+          <img class="circle" src="/assets/stones.jpg" alt="Hot stones and candles">
+          <div>
+            <h3 class="mt-0">Soothing Ambience</h3>
+            <p>Warm lighting and tranquil music to melt away stress.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="center mt-4">
+        <a class="btn btn-outline" href="/about.html">See all services</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer (single, only once) -->
+  <footer class="site-footer">
+    <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <div>© 2025 Lido Massage</div>
+      <div class="address">Gainesville, GA</div>
+      <div style="margin-left:auto">
+        <a href="tel:+14702525055">Call</a> ·
+        <a href="sms:+14706181995">Text</a> ·
+        <a href="https://maps.apple.com/?q=1310%20Dawsonville%20Hwy%20Suite%20D%2C%20Gainesville%2C%20GA%2030501" target="_blank" rel="noopener">Map</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Lido Massage","image":"https://lido-massage.com/assets/stones.jpg","url":"https://lido-massage.com/","telephone":"+1-470-252-5055","address":{"@type":"PostalAddress","streetAddress":"1310 Dawsonville Hwy, Suite D","addressLocality":"Gainesville","addressRegion":"GA","postalCode":"30501","addressCountry":"US"},"priceRange":"$$","description":"Professional body and foot massage in Gainesville, GA. Organic oils. Walk-ins welcome."}
+  </script>
+</body>
+</html>        <a href="tel:+14702525055">Call</a> ·
         <a href="sms:+14706181995">Text</a> ·
         <a href="https://maps.apple.com/?q=1310%20Dawsonville%20Hwy%20Suite%20D%2C%20Gainesville%2C%20GA%2030501" target="_blank" rel="noopener">Map</a> <!-- ·
         <a href="#" aria-disabled="true" style="opacity:.45; pointer-events:none;">Book</a> -->
