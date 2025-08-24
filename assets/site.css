@@ -1,40 +1,88 @@
+/* ---------- Base ---------- */
 :root{
-  --ink:#223;
-  --muted:#6b7b76;
-  --bg:#f7fbfa;
-  --soft:#eef4f1;
-  --primary:#0a7b64;   /* darker green (match the banner) */
-  --primary-ghost:#cfe7e2;
+  --ink:#19202a;
+  --muted:#5b6470;
+  --bg:#f6fbf8;
   --card:#ffffff;
-  --border:#e2eee9;
+  --brand:#0a7b64;       /* dark spa green (buttons/pill) */
+  --brand-200:#e7f3f0;   /* pale green backgrounds */
+  --line:#e6ecea;
   --radius:14px;
-  --shadow:0 10px 25px rgba(0,0,0,.06);
 }
-
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+body{
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--ink);
+  background:#fff;
+}
 
-/* layout */
-.container{max-width:1060px;margin:0 auto;padding:0 20px}
-.narrow{max-width:820px}
-.section{padding:48px 0}
+/* ---------- Layout ---------- */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section{padding:56px 0}
 .section--tight{padding:28px 0}
-.center{text-align:center}
-.mt-1{margin-top:8px}.mt-2{margin-top:16px}.mt-3{margin-top:24px}
+.grid{display:grid;gap:18px}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr} }
 
-/* header */
-.site-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--border)}
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky; top:0; z-index:20;
+  background:#fff; border-bottom:1px solid var(--line);
+}
 .nav{display:flex;justify-content:space-between;align-items:center;height:64px}
-.brand{font-weight:700;text-decoration:none;color:var(--ink)}
-.nav-links a{margin-left:22px;text-decoration:none;color:var(--muted)}
-.nav-links a.active,.nav-links a:hover{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:6px}
+.brand{font-weight:800;color:var(--ink);text-decoration:none}
+.nav-links a{
+  color:var(--ink); text-decoration:none; margin-left:22px;
+  padding:8px 2px; border-bottom:3px solid transparent;
+}
+.nav-links a.active{border-color:var(--brand); color:var(--brand)}
 
-/* hero */
-.hero{background:linear-gradient(180deg, var(--bg), #fff 60%);padding:64px 0 24px}
-.hero .lead{color:#51625d}
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(#fff, var(--bg))}
+.hero-inner{padding:66px 0;text-align:center}
+.lead{color:var(--muted);font-size:18px;margin:12px 0 22px}
 
-/* buttons */
+/* ---------- Buttons & Pills ---------- */
+.btn{
+  display:inline-block; font-weight:700; text-decoration:none;
+  border-radius:10px; padding:12px 18px; border:2px solid var(--brand);
+}
+.btn-primary{background:var(--brand); color:#fff}
+.btn-outline{background:#fff; color:var(--brand)}
+.btn + .btn{margin-left:10px}
+
+.badge-soft{
+  background:var(--brand-200); color:var(--ink);
+  padding:6px 10px; border-radius:999px; font-size:12px; display:inline-block;
+}
+
+/* ---------- Cards / Offer ---------- */
+.card{
+  background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:20px;
+}
+.offer{
+  background:var(--brand-200); border:1px solid var(--line);
+  border-radius:var(--radius); padding:18px; display:flex;justify-content:space-between;align-items:center;
+}
+.offer .pill{background:var(--brand);color:#fff;border-radius:999px;padding:6px 10px;font-weight:700;display:inline-block}
+
+/* ---------- Features / Gallery ---------- */
+.feature{display:flex; gap:18px; align-items:center}
+.feature img{width:96px;height:96px;object-fit:cover;border-radius:12px}
+.feature h3{margin:0 0 6px}
+.feature p{margin:0;color:var(--muted)}
+
+/* ---------- Prices ---------- */
+.price-card .line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dotted var(--line)}
+.price-card .amt{font-weight:700}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid var(--line); background:#fff}
+.site-footer .links a{color:var(--ink);text-decoration:none;margin-right:14px}
+.address{line-height:1.5;color:var(--muted)}/* buttons */
 .btn{display:inline-block;background:var(--primary);color:#fff !important;padding:12px 18px;border-radius:12px;border:1px solid transparent;box-shadow:var(--shadow);text-decoration:none;font-weight:600}
 .btn:hover{filter:brightness(.95)}
 .btn-secondary{background:#ffffff;color:var(--primary) !important;border:1px solid var(--primary)}
