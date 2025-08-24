@@ -21,8 +21,7 @@ body{
   margin:0;
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   color:var(--ink);
-  background:
-    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   line-height:1.55;
 }
 
@@ -34,6 +33,7 @@ a:hover{text-decoration:underline}
 .container{max-width:1100px; margin:0 auto; padding:0 20px}
 .section{padding:48px 0}
 .section--tight{padding:28px 0}
+.center{text-align:center}
 
 /* Spacing utilities */
 .mt-0{margin-top:0}
@@ -41,11 +41,6 @@ a:hover{text-decoration:underline}
 .mt-2{margin-top:12px}
 .mt-3{margin-top:18px}
 .mt-4{margin-top:24px}
-.center{text-align:center}
-
-/* Headings */
-h1,h2,h3,h4{line-height:1.2; margin:0 0 6px}
-.h2{font-size:1.6rem; margin:0}
 
 /* Header / Nav */
 .site-header{
@@ -54,10 +49,21 @@ h1,h2,h3,h4{line-height:1.2; margin:0 0 6px}
   backdrop-filter:saturate(140%) blur(8px);
 }
 .nav{display:flex; align-items:center; gap:18px; padding:14px 0;}
-.brand{font-weight:800; font-size:1.1rem; color:var(--ink)}
+.brand{display:flex; align-items:center; gap:10px; color:var(--ink)}
+.logo{height:40px; width:auto; display:block}
 .nav-links{margin-left:auto; display:flex; gap:16px; flex-wrap:wrap}
-.nav-links a{color:#3b4151; padding:6px 6px; border-radius:8px}
+.nav-links a{color:#3b4151; padding:6px 6px; border-radius:8px; position:relative}
 .nav-links a.active{color:var(--primary); font-weight:700}
+.nav-links a.active::after{
+  content:""; position:absolute; left:6px; right:6px; bottom:-2px;
+  height:3px; background:var(--primary); border-radius:3px; opacity:.25;
+}
+
+/* Top contact bar */
+.top-contact{
+  background:var(--accent);
+  border-bottom:1px solid var(--border);
+}
 
 /* Hero */
 .hero{
@@ -80,22 +86,34 @@ h1,h2,h3,h4{line-height:1.2; margin:0 0 6px}
   font-size:12px; font-weight:600;
 }
 
-/* Buttons */
-.btn{
+/* Buttons (unified) */
+.btn,
+.btn-primary,
+.btn-secondary{
   display:inline-block; padding:12px 16px;
   border-radius:10px; border:1px solid var(--primary);
   background:var(--primary); color:#fff; font-weight:700;
-  text-decoration:none; transition:transform .04s ease, box-shadow .2s ease;
+  text-decoration:none; transition:transform .04s ease, box-shadow .2s ease, background .2s ease;
 }
-.btn:hover{ text-decoration:none; transform:translateY(-1px); box-shadow:var(--shadow) }
-.btn:active{ transform:translateY(0) }
+.btn:hover,.btn-primary:hover,.btn-secondary:hover{
+  text-decoration:none; transform:translateY(-1px); box-shadow:var(--shadow)
+}
+.btn:active,.btn-primary:active,.btn-secondary:active{ transform:translateY(0) }
 
+/* Outline / Ghost */
 .btn-outline{
   display:inline-block; padding:12px 16px;
   border-radius:10px; border:1px solid var(--primary);
   background:transparent; color:var(--primary); font-weight:700;
 }
 .btn-outline:hover{ background:var(--primary-weak); text-decoration:none }
+
+.btn-ghost{
+  display:inline-block; padding:12px 16px;
+  border-radius:10px; border:1px solid transparent;
+  background:rgba(10,123,100,.06); color:var(--primary); font-weight:700;
+}
+.btn-ghost:hover{ background:rgba(10,123,100,.12); text-decoration:none }
 
 /* Cards / Panels */
 .card{
@@ -128,7 +146,7 @@ h1,h2,h3,h4{line-height:1.2; margin:0 0 6px}
 @media (max-width:840px){ .circle{width:180px; height:180px} }
 
 /* Price cards */
-.price-card h4{margin:0 0 8px}
+.price-card h3,.price-card h4{margin:0 0 8px}
 .price-card .line{
   display:flex; justify-content:space-between; gap:12px;
   padding:10px 0; border-bottom:1px dashed #e6e6e6;
